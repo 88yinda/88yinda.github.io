@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Company Name</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+	<header>
+		<div class="container">
+			<a href="#" class="logo">Company Name</a>
+			<nav>
+				<ul>
+					<li><a href="#">Home</a></li>
+					<li><a href="#">Products</a>
+						<ul>
+							<li><a href="#">Long-Term Rental</a></li>
+							<li><a href="#">Short-Term Rental</a></li>
+							<li><a href="#">Mineral Mining</a></li>
+						</ul>
+					</li>
+					<li><a href="#">Partners</a></li>
+					<li><a href="#">Career</a></li>
+					<li><a href="#">About Us</a></li>
+				</ul>
+			</nav>
+			<form class="search-bar">
+				<input type="text" placeholder="Search...">
+				<button type="submit">Search</button>
+			</form>
+		</div>
+	</header>
+
+	<section class="hero">
+		<div class="container">
+			<h1>Discover Our Services</h1>
+			<p>We provide solutions that meet your needs</p>
+			<a href="#" class="cta-button">Explore</a>
+		</div>
+	</section>
+
+	<section class="products">
+		<div class="container">
+			<h2>Our Products</h2>
+			<div class="product">
+				<img src="product1.jpg" alt="Product 1">
+				<h3>Long-Term Rental</h3>
+				<p>We offer long-term rental services that meet your specific needs. Our products are reliable and designed for long-term use.</p>
+			</div>
+			<div class="product">
+				<img src="product2.jpg" alt="Product 2">
+				<h3>Short-Term Rental</h3>
+				<p>We provide short-term rental services for events, conferences, and other occasions. Our products are of high quality and are sure to impress your guests.</p>
+			</div>
+			<div class="product">
+				<img src="product3.jpg" alt="Product 3">
+				<h3>Mineral Mining</h3>
+				<p>We offer mineral mining services that are safe, efficient, and cost-effective. Our team of experts ensures that our operations are environmentally friendly.</p>
+			</div>
+		</div>
+	</section>
+
+	<section class="social-proof">
+		<div class="container">
+			<h2>What Our Customers Say</h2>
+			<div class="testimonial">
+				<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eget leo sit amet mi euismod gravida. Integer tristique posuere magna ac ultricies."</p>
+				<p class="author">John Doe, CEO of Company X</p>
+			</div>
+			<div class="testimonial">
+				<p>"Nullam hendrerit suscipit leo quis consequat. Donec feugiat convallis nisi vel efficitur. Curabitur sed odio elit. Sed lobortis metus ut est accumsan, at vulputate quam consectetur."</p>
+				<p class="author">Jane Smith, CFO of Company Y</p>
+			</div>
+	
