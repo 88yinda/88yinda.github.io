@@ -79,13 +79,13 @@
   padding: 6px 10px;
   margin-top: 8px;
   margin-right: 16px;
-  background: #07e913;
+  background: #d2d5d2;
   font-size: 17px;
   border: none;
   cursor: pointer;
 }
 .menu .search-container button:hover {
-  background: #b32525;
+  background: #626060;
 }
 /* When the screen is less than 600px wide, stack the links and the search field vertically instead of horizontally */
 @media screen and (max-width: 600px) {
