@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Sino-US Real Estate Partners</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#0F52BA', // 代表信任的蓝色
+                        secondary: '#B8860B', // 代表繁荣的金色
+                        neutral: {
+                            100: '#F5F5F5',
+                            200: '#E5E5E5',
+                            700: '#374151',
+                            800: '#1F2937',
+                            900: '#111827'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .text-shadow {
+                text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
+            .text-shadow-lg {
+                text-shadow: 0 4px 8px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.08);
+            }
+            .transition-transform {
+                transition-property: transform;
+                transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+                transition-duration: 300ms;
+            }
+            .hover-lift {
+                @apply hover:-translate-y-1 transition-all duration-300;
+            }
+            .section-fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.8s ease, transform 0.8s ease;
+            }
+            .section-visible {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="font-sans text-neutral-800 bg-white">
+    <!-- 导航栏 -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-white/90 backdrop-blur-sm shadow-sm">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#" class="flex items-center">
+                        <span class="text-primary text-2xl font-bold">Sino-US Realty</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#" class="text-neutral-700 hover:text-primary transition-colors">Home</a>
+                    <a href="#" class="text-primary font-medium border-b-2 border-primary pb-1">About Us</a>
+                    <a href="#" class="text-neutral-700 hover:text-primary transition-colors">Services</a>
+                    <a href="#" class="text-neutral-700 hover:text-primary transition-colors">Projects</a>
+                    <a href="#" class="text-neutral-700 hover:text-primary transition-colors">Contact</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" class="text-neutral-700 hover:text-primary">
+                        <i class="fa fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 移动端菜单 -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block px-3 py-2 text-neutral-700 hover:bg-primary/10 hover:text-primary rounded-md">Home</a>
+                <a href="#" class="block px-3 py-2 text-primary bg-primary/10 rounded-md">About Us</a>
+                <a href="#" class="block px-3 py-2 text-neutral-700 hover:bg-primary/10 hover:text-primary rounded-md">Services</a>
+                <a href="#" class="block px-3 py-2 text-neutral-700 hover:bg-primary/10 hover:text-primary rounded-md">Projects</a>
+                <a href="#" class="block px-3 py-2 text-neutral-700 hover:bg-primary/10 hover:text-primary rounded-md">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 头部横幅 -->
+    <header class="relative pt-16 pb-24 md:pt-20 md:pb-32 bg-gradient-to-r from-primary/90 to-primary text-white overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <div class="absolute inset-0 bg-[url('https://picsum.photos/id/1067/1200/800')] bg-cover bg-center"></div>
+        </div>
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-shadow-lg leading-tight">
+                    Building Bridges, Creating Value
+                </h1>
+                <p class="text-xl md:text-2xl opacity-90 mb-8">
+                    Facilitating Transatlantic Real Estate Partnerships Since 2005
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="bg-white text-primary hover:bg-neutral-100 font-medium py-3 px-8 rounded-md transition-colors shadow-lg hover:shadow-xl">
+                        Explore Partnerships
+                    </a>
+                    <a href="#services" class="bg-transparent border-2 border-white text-white hover:bg-white/10 font-medium py-3 px-8 rounded-md transition-colors">
+                        Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent"></div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <!-- 公司背景 -->
+        <section id="background" class="mb-24 section-fade-in">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="inline-block text-primary font-medium mb-2">OUR STORY</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900">A Legacy of Cross-Border Collaboration</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -top-4 -left-4 w-64 h-64 bg-primary/10 rounded-lg -z-10"></div>
+                    <img src="https://picsum.photos/id/1073/600/800" alt="Business meeting between Chinese and American partners" class="w-full h-auto rounded-lg shadow-xl">
+                    <div class="absolute -bottom-6 -right-6 w-40 h-40 bg-secondary/10 rounded-lg -z-10"></div>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-bold mb-6 text-neutral-900">Our Founding Principles</h3>
+                    <p class="text-neutral-700 mb-6 leading-relaxed">
+                        Established in 2005, Sino-US Realty emerged from a shared vision to bridge the gap between American and Chinese real estate markets. Our founders, with decades of combined experience in both markets, recognized the untapped potential of cross-border collaboration.
+                    </p>
+                    <p class="text-neutral-700 mb-6 leading-relaxed">
+                        What began as a small brokerage facilitating residential investments has evolved into a comprehensive platform managing over $2.8 billion in cross-border real estate transactions, spanning commercial developments, residential complexes, and mixed-use projects.
+                    </p>
+                    <p class="text-neutral-700 leading-relaxed">
+                        We've navigated market fluctuations, cultural nuances, and regulatory changes to become the trusted partner for over 500 institutional investors and thousands of individual clients.
+                    </p>
+                    
+                    <div class="mt-10 grid grid-cols-3 gap-4 text-center">
+                        <div class="p-4 bg-neutral-100 rounded-lg hover-lift">
+                            <span class="block text-3xl font-bold text-primary mb-1">18+</span>
+                            <span class="text-neutral-700">Years Experience</span>
+                        </div>
+                        <div class="p-4 bg-neutral-100 rounded-lg hover-lift">
+                            <span class="block text-3xl font-bold text-primary mb-1">500+</span>
+                            <span class="text-neutral-700">Partners</span>
+                        </div>
+                        <div class="p-4 bg-neutral-100 rounded-lg hover-lift">
+                            <span class="block text-3xl font-bold text-primary mb-1">2.8B+</span>
+                            <span class="text-neutral-700">Transactions</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公司文化 -->
+        <section id="culture" class="mb-24 section-fade-in bg-neutral-100/50 py-16 rounded-2xl">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="inline-block text-primary font-medium mb-2">OUR VALUES</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900">The Foundation of Our Success</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <p class="mt-6 text-lg text-neutral-700">
+                    Our culture is built on principles that honor both Eastern and Western business philosophies
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow hover-lift">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-handshake-o text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-neutral-900">Mutual Respect</h3>
+                    <p class="text-neutral-700">
+                        We honor cultural differences and find strength in diverse perspectives, creating an environment where both Eastern and Western approaches are valued.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow hover-lift">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-balance-scale text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-neutral-900">Win-Win Mentality</h3>
+                    <p class="text-neutral-700">
+                        Every partnership must create value for all stakeholders. We measure success by the mutual benefits achieved by our Chinese and American clients.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow hover-lift">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-lightbulb-o text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-neutral-900">Innovation</h3>
+                    <p class="text-neutral-700">
+                        We continuously develop new approaches to cross-border real estate, leveraging technology and market insights to create unique opportunities.
+                    </p>
+                </div>
+                
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition-shadow hover-lift">
+                    <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-shield text-2xl text-primary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4 text-neutral-900">Integrity</h3>
+                    <p class="text-neutral-700">
+                        Transparency and ethical conduct form the basis of all our relationships, ensuring trust across cultures and borders.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 公司远景 -->
+        <section id="vision" class="mb-24 section-fade-in">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="inline-block text-primary font-medium mb-2">OUR VISION</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900">Building a Shared Future</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="relative">
+                <div class="absolute inset-0 bg-primary/5 rounded-2xl -z-10"></div>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-6 text-neutral-900">Our Strategic Vision</h3>
+                        <p class="text-neutral-700 mb-6 leading-relaxed">
+                            We envision a world where real estate serves as a powerful connector between the United States and China, fostering economic cooperation and cultural understanding.
+                        </p>
+                        <p class="text-neutral-700 mb-8 leading-relaxed">
+                            Over the next decade, we aim to expand our portfolio to $10 billion in cross-border transactions while developing sustainable communities that integrate the best of both cultures' architectural and design philosophies.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <div class="mt-1 mr-4 text-secondary">
+                                    <i class="fa fa-check-circle text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-neutral-900">Expanded Market Reach</h4>
+                                    <p class="text-neutral-700">Enter 15 new metropolitan markets across both countries</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="mt-1 mr-4 text-secondary">
+                                    <i class="fa fa-check-circle text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-neutral-900">Sustainability Focus</h4>
+                                    <p class="text-neutral-700">50% of new developments will meet net-zero carbon standards</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start">
+                                <div class="mt-1 mr-4 text-secondary">
+                                    <i class="fa fa-check-circle text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-neutral-900">Cultural Exchange Programs</h4>
+                                    <p class="text-neutral-700">Facilitate knowledge sharing between professionals</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <img src="https://picsum.photos/id/1048/600/800" alt="Modern sustainable building representing future vision" class="w-full h-auto rounded-lg shadow-xl">
+                        <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-lg shadow-lg max-w-xs">
+                            <p class="italic text-neutral-700">
+                                "We believe real estate is more than buildings – it's about creating connections that transcend borders."
+                            </p>
+                            <p class="mt-4 font-bold text-neutral-900">— Jane Chen, CEO & Co-Founder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 中美合作重点 -->
+        <section id="focus" class="mb-24 section-fade-in">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="inline-block text-primary font-medium mb-2">OUR FOCUS</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900">Bridging US-China Real Estate Markets</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <p class="mt-6 text-lg text-neutral-700">
+                    Our specialized approach creates value through cultural understanding and market expertise
+                </p>
+            </div>
+            
+            <div class="bg-gradient-to-r from-primary to-primary/80 text-white rounded-2xl overflow-hidden">
+                <div class="grid md:grid-cols-2">
+                    <div class="p-8 md:p-12">
+                        <h3 class="text-2xl font-bold mb-6">How We Facilitate Win-Win Partnerships</h3>
+                        <p class="mb-8 opacity-90 leading-relaxed">
+                            We understand that successful cross-border real estate ventures require more than just financial acumen – they demand cultural intelligence, regulatory expertise, and a commitment to mutual benefit.
+                        </p>
+                        
+                        <div class="space-y-6">
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-map-marker text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Market Navigation</h4>
+                                    <p class="opacity-90">Guidance through complex regulatory environments in both countries</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-money text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Investment Strategy</h4>
+                                    <p class="opacity-90">Tailored approaches that align with cultural expectations and financial goals</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-comments text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Cultural Mediation</h4>
+                                    <p class="opacity-90">Bridging communication gaps with native expertise on both sides</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex">
+                                <div class="flex-shrink-0 w-12 h-12 bg-white/10 rounded-full flex items-center justify-center mr-4">
+                                    <i class="fa fa-line-chart text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Risk Mitigation</h4>
+                                    <p class="opacity-90">Comprehensive analysis of political, economic, and market factors</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative hidden md:block">
+                        <img src="https://picsum.photos/id/1031/800/1000" alt="Skyline showing both Chinese and American architectural styles" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-l from-primary to-transparent"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 领导团队 -->
+        <section id="leadership" class="mb-24 section-fade-in">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="inline-block text-primary font-medium mb-2">OUR LEADERSHIP</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900">A Team With Global Perspective</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow hover-lift">
+                    <img src="https://picsum.photos/id/1005/400/500" alt="Jane Chen, CEO & Co-Founder" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1 text-neutral-900">Jane Chen</h3>
+                        <p class="text-primary mb-4">CEO & Co-Founder</p>
+                        <p class="text-neutral-700 text-sm">
+                            20+ years in US-China real estate with expertise in cross-border investment strategies.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow hover-lift">
+                    <img src="https://picsum.photos/id/1012/400/500" alt="Robert Johnson, Managing Director - US Operations" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1 text-neutral-900">Robert Johnson</h3>
+                        <p class="text-primary mb-4">Managing Director - US Operations</p>
+                        <p class="text-neutral-700 text-sm">
+                            Former investment banker with deep knowledge of American real estate markets.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow hover-lift">
+                    <img src="https://picsum.photos/id/1027/400/500" alt="Michael Zhang, Managing Director - China Operations" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1 text-neutral-900">Michael Zhang</h3>
+                        <p class="text-primary mb-4">Managing Director - China Operations</p>
+                        <p class="text-neutral-700 text-sm">
+                            Real estate veteran with extensive network across major Chinese cities.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-shadow hover-lift">
+                    <img src="https://picsum.photos/id/1062/400/500" alt="Sarah Williams, Chief Strategy Officer" class="w-full h-80 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-1 text-neutral-900">Sarah Williams</h3>
+                        <p class="text-primary mb-4">Chief Strategy Officer</p>
+                        <p class="text-neutral-700 text-sm">
+                            Specializes in sustainable development and US-China policy analysis.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系我们 -->
+        <section id="contact" class="section-fade-in">
+            <div class="max-w-3xl mx-auto text-center mb-16">
+                <span class="inline-block text-primary font-medium mb-2">GET IN TOUCH</span>
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-neutral-900">Explore Collaboration Opportunities</h2>
+                <div class="w-20 h-1 bg-secondary mx-auto"></div>
+                <p class="mt-6 text-lg text-neutral-700">
+                    Whether you're a developer, investor, or looking to explore cross-border opportunities, we're here to help.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <form>
+                        <div class="mb-6">
+                            <label for="name" class="block text-neutral-700 font-medium mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Your name">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="email" class="block text-neutral-700 font-medium mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Your email">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="interest" class="block text-neutral-700 font-medium mb-2">Area of Interest</label>
+                            <select id="interest" class="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors">
+                                <option value="" selected disabled>Select an option</option>
+                                <option value="investment">Real Estate Investment</option>
+                                <option value="development">Joint Development</option>
+                                <option value="consulting">Market Consulting</option>
+                                <option value="other">Other Services</option>
+                            </select>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="message" class="block text-neutral-700 font-medium mb-2">Your Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-neutral-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-colors" placeholder="Tell us about your project or inquiry"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="w-full bg-primary hover:bg-primary/90 text-white font-medium py-3 px-6 rounded-md transition-colors shadow-md hover:shadow-lg">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <div class="bg-neutral-100 p-8 rounded-xl mb-8">
+                        <h3 class="text-2xl font-bold mb-6 text-neutral-900">Our Locations</h3>
+                        
+                        <div class="space-y-6">
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-neutral-900">New York Office</h4>
+                                <p class="text-neutral-700 mb-1">1234 Fifth Avenue</p>
+                                <p class="text-neutral-700 mb-1">New York, NY 10010</p>
+                                <p class="text-neutral-700 mb-3">United States</p>
+                                <p class="text-neutral-700"><i class="fa fa-phone mr-2 text-primary"></i> +1 (212) 555-7890</p>
+                            </div>
+                            
+                            <div>
+                                <h4 class="font-bold text-lg mb-2 text-neutral-900">Shanghai Office</h4>
+                                <p class="text-neutral-700 mb-1">5678 Nanjing Road</p>
+                                <p class="text-neutral-700 mb-1">Shanghai 200001</p>
+                                <p class="text-neutral-700 mb-3">China</p>
+                                <p class="text-neutral-700"><i class="fa fa-phone mr-2 text-primary"></i> +86 (21) 5555-6789</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-neutral-100 p-8 rounded-xl">
+                        <h3 class="text-2xl font-bold mb-6 text-neutral-900">Follow Us</h3>
+                        <p class="text-neutral-700 mb-6">Connect with us on social media for the latest updates and insights</p>
+                        
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                <i class="fa fa-linkedin"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                <i class="fa fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-neutral-900 text-white py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-6">Sino-US Realty</h3>
+                    <p class="text-neutral-400 mb-6">
+                        Facilitating transatlantic real estate partnerships and creating value for clients in both the United States and China.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                            <i class="fa fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                            <i class="fa fa-weixin"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-white transition-colors">
+                            <i class="fa fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Home</a></li>
+                        <li><a href="#" class="text-white font-medium">About Us</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Our Services</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Projects</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Testimonials</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Our Services</h4>
+                    <ul class="space-y-3">
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Cross-Border Investment</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Development Partnerships</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Market Research</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Property Management</a></li>
+                        <li><a href="#" class="text-neutral-400 hover:text-white transition-colors">Cultural Consulting</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-bold mb-6">Newsletter</h4>
+                    <p class="text-neutral-400 mb-4">
+                        Subscribe to our newsletter for insights on US-China real estate markets.
+                    </p>
+                    <form class="mb-4">
+                        <div class="flex">
+                            <input type="email" placeholder="Your email" class="px-4 py-2 w-full bg-neutral-800 border border-neutral-700 rounded-l-md focus:outline-none focus:ring-1 focus:ring-primary text-white">
+                            <button type="submit" class="bg-primary hover:bg-primary/90 px-4 rounded-r-md transition-colors">
+                                <i class="fa fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </form>
+                    <p class="text-neutral-500 text-sm">
+                        We respect your privacy. Unsubscribe at any time.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="border-t border-neutral-800 pt-8">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <p class="text-neutral-500 text-sm mb-4 md:mb-0">
+                        &copy; 2023 Sino-US Realty. All rights reserved.
+                    </p>
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-neutral-500 hover:text-white text-sm transition-colors">Privacy Policy</a>
+                        <a href="#" class="text-neutral-500 hover:text-white text-sm transition-colors">Terms of Service</a>
+                        <a href="#" class="text-neutral-500 hover:text-white text-sm transition-colors">Cookie Policy</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 移动端菜单切换
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // 导航栏滚动效果
+        const navbar = document.getElementById('navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-md');
+                navbar.classList.remove('bg-white/90');
+                navbar.classList.add('bg-white');
+            } else {
+                navbar.classList.remove('shadow-md');
+                navbar.classList.add('bg-white/90');
+                navbar.classList.remove('bg-white');
+            }
+        });
+        
+        // 滚动动画
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+        
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('section-visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.section-fade-in').forEach(section => {
+            observer.observe(section);
+        });
+        
+        // 平滑滚动
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // 关闭移动菜单（如果打开）
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
